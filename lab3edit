@@ -1,0 +1,39 @@
+#Batting averages and slugging averages
+#Walker Dominey
+#Fundamentals of programming
+#ACC FALL 2018
+#Lab3B.py
+#
+def main():
+    #variable declaration
+    Player=1
+    Single=2
+    Double=3
+    Triple=4
+    Homerun=5
+    Atbat=6
+    BA=7
+    SA=8
+    #open statement
+    infile=
+    outfile=
+    #load data
+    k=0
+    while(k<9):
+        templist=
+        Single=
+        Double=
+        Triple=
+        Homerun=
+    #call functions
+    S1=Single()
+    D1=Double()
+    T1=Triple()
+    HR1=Homerun()
+    BA=(Single+Double+Triple+Homerun)/Atbat
+    SA=(Single*1)+(Double*2)+(Triple*3)+(Homerun*4)/Atbat
+    print()
+    k=k+1
+#This function tells you how to get
+#the number to compute slugging average
+def single    
