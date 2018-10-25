@@ -1,0 +1,71 @@
+#Program to manipulate matrices
+#Walker Dominey
+#Fundamentals of Programming COSC 1336 Python
+#ACC FALL 2018
+#warm5a.py
+#Professor Onabajo
+#Global Variable
+def main():
+    #variable declaration
+    suma=0
+    large=0
+    #file declaration
+    infile=open('warm5a.dat','r')
+    outfile=open('warm5a.out','w')
+    #array/list declaration
+    x=[[0,0,0],
+       [0,0,0,],
+       [0,0,0]]
+    #call function load
+    loaddata=(infile,x)
+    suma=summation(x)
+    large=largest(x)
+    outdata=(outfile,x,suma,large)
+    infile.close
+    outfile.close
+    #call functions
+    def loaddata(file,a):
+        #local variable
+        k=0
+        j=0
+        #loading column
+        templist=file.readline().strip('\n').split(',')
+        while(k<3):
+            j=0
+            while(j<3):
+                a[k][j]=int(templist[n])
+            j=j+1
+            n=n+1
+        k=k+1
+    def summation(a):
+        #local variable
+        k=0
+        s=0
+        while(k<3):
+            s=s+a[1][k]
+            k=k+1
+    def largest(a):
+        #local variable
+        k=0
+        l=0
+        l=a[k][0]
+        while(k<3):
+            if(l<a[k][0]):
+                l=a[k][0]
+            k=k+1
+        return[l]
+    def outddata(file,a,b,c):
+        #local variable
+        i=0
+        j=0
+        print('sum= ',b)
+        file.write('sum= '+str(b))
+        print('largest= ',c)
+        file.write('largest'+str(c))
+        i=0
+        while(i<3):
+            j=0
+            print('%s%s%s',a[i][0],a[i][1],a[i][2],'\n')
+            file.write('%s%s%s'+str(a[i][0])+str(a[i][1])+str(a[i][2]),'\n')
+            i=i+1                                       
+main()
