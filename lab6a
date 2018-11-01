@@ -1,0 +1,89 @@
+#program that give information of all kinds for restaurants
+#Walker Dominey
+#Fundamentals of Programming COSC 1336 Python
+#ACC FALL 2018
+#warm6a.py
+#Professor Onabajo
+#Global Variable
+N=10
+def main():
+    #record declaration
+    Restaurant=[""]*10
+    FoodType=[""]*10
+    Reservation=[0]*10
+    Rating=[0]*10
+    CreditCard=[0]*10
+    #file declaration
+    infile=open('lab6info.dat','r')
+    outfile=open('lab6info.out','w')
+    #call functions
+    loadrec(infile,Restaurant,FoodType,Reservation,Rating,CreditCard)
+    CreditCards(outfile,Restaurant,CreditCard)
+    ChineseThai(outfile,Restaurant,FoodType,Rating)
+    Health(oufile,Restaurant,FoodType)
+    Star(outfile,Restaurant,Rating)
+def loadrec(file,a,b,c,d,e):
+    #local variable
+    k=0
+    while(k<N):
+        templist=file.readline().strip('\n').split(',')
+        a[k]=(templist[0])
+        b[k]=(templist[1])
+        c[k]=int(templist[2])
+        d[k]=int(templist[3])
+        e[k]=int(templist[4])
+        k=k+1
+def ChineseThai(file,a,b,d):
+    #might be d instead of c
+    #local variable
+    k=0
+    #headings
+    print('Restaurant that serves Chinese food and has at least 3 star rating')
+    file.write('Restaurant that serves Chinese food and has at least 3 star rating')      
+    while(k<N):
+        if((b[k]=='Chinese')and(d[k]>=3)):
+               print(a[k])
+               file.write(a[k])
+    k=k+1           
+def Star(file,a,b):
+    #local variable
+    k=0              
+    #heading
+    print('Restaurant with 1 star')
+    file.write('Restaurant with 1 star')
+    while(k<N):
+        if(b[k]<5):
+            print(a[k])
+            file.write(a[k])
+    #local variable
+    k=0              
+    #heading
+    print('Restaurant with 2 stars')
+    file.write('Restaurant with 2 stars')
+    while(k<N):
+        if(b[k]<5):
+            print(a[k])
+            file.write(a[k])
+    #local variable
+    k=0              
+    #heading
+    print('Restaurant with 3 stars')
+    file.write('Restaurant with 3 stars')
+    while(k<N):
+        if(b[k]<5):
+            print(a[k])
+            file.write(a[k])
+    #local variable
+    k=0              
+    #heading
+    print('Restaurant with 4 stars')
+    file.write('Restaurant with 4 stars')
+    while(k<N):
+        if(b[k]<5):
+            print(a[k])
+            file.write(a[k])
+def CreditCards(file,a,b):
+    
+main()
+
+
