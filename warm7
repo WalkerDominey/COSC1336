@@ -1,0 +1,66 @@
+#Bubble and Binary search
+#Walker Dominey
+#Fundamentals of programming
+#ACC FALL 2018
+#Lab3B.py
+#Global Variable
+N=10
+def main():
+    #array/list declaration
+    student=[0]*N
+    gpa=[0]*N
+    #file declaration
+    infilea=open('warm7a.txt','r')
+    infileb=open('warm7b.txt','r')
+    outfile=open('warm7a.out','w')
+    #variable declaration
+    loadrec(infilea,student,gpa)
+    print('Unsorted Data')
+    outdata(outfile,student,gpa)
+    bubble(student,gpa)
+    print('Sorted Data)
+    outdata(outfile,student,gpa)
+    binary(student,gpa)
+    print('Modified Data')
+    outdata(outfile,student,gpa)
+    #close files
+    infilea.close()
+    infileb.close()
+    outfile.close()
+def loadrec(file,a,b):
+        #local varaivle
+        k=0
+        while(k<N):
+            templist=file.readline(),strip('\n').split(',')
+            a[k]=templist[0]
+            b[k]=float(templist[1])
+            k=k+1
+def outdata(file,a,b):
+        #local variable
+        k=0
+        while(k<N):
+            print(a[k],b[k])
+            file.write(a[k]+str(b[k])+'\n')
+            k=k+1
+def bubble(a,b):
+    #local variable
+    i=N
+    while(i>=1):
+        flag=0
+        j=0
+        temp1=0
+        temp=0
+        while(j<=i-1):
+            if (a[j]>a[j+1]):
+            temp=a[j]
+            a[j]=a[j+1]
+            a[j+1]=temp
+            temp=b[j]
+            b[j]=b[j+1]
+            b[j+1]=temp1
+            flag=1
+            j=j+1
+        else:
+            j=j-1
+    i=i-1
+            
