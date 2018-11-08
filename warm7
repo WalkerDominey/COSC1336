@@ -45,12 +45,12 @@ def outdata(file,a,b):
 def bubble(a,b):
     #local variable
     i=N
-    while(i>=1):
+    while((i>=1)and(flag==)):
         flag=0
         j=0
         temp1=0
         temp=0
-        while(j<=i-1):
+        while(j<=i-1)):
             if (a[j]>a[j+1]):
             temp=a[j]
             a[j]=a[j+1]
